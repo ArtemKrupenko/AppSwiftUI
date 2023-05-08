@@ -14,6 +14,31 @@ extension View {
         modifier(BackgroundViewApp())
     }
     
+    /// Заглавие
+    func textTitle() -> some View {
+        modifier(TextTitleModifier())
+    }
+    
+    /// Лейбл под заглавием
+    func textLabel() -> some View {
+        modifier(TextLabelModifier())
+    }
+    
+    /// Размер заглавия с кнопкой меню
+    func frameTitleMenu() -> some View {
+        modifier(FrameTitleMenuModifier())
+    }
+    
+    /// Текст кнопки в поп-апе
+    func textButtonPopup() -> some View {
+        modifier(TextButtonPopupModifier())
+    }
+    
+    ///  Поп-ап
+    func framePopup() -> some View {
+        modifier(FramePopupModifier())
+    }
+    
     /// Белый TextField
     func whiteTextField() -> some View {
         modifier(WhiteTextFieldModifier())
@@ -25,9 +50,9 @@ extension View {
     }
     
     /// Круг на таббаре
-    func imageIconHome() -> some View {
-        modifier(ImageIconHomeModifier())
-    }
+//    func imageIconHome() -> some View {
+//        modifier(ImageIconHomeModifier())
+//    }
     
     /// Изображение смайлика
     func imageIconSmile() -> some View {
@@ -47,13 +72,61 @@ struct BackgroundViewApp: ViewModifier {
     }
 }
 
+/// Заглавие
+struct TextTitleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 20, weight: .medium))
+            .frame(width: 310, height: 20, alignment: .leading)
+            .padding(.leading, 10)
+    }
+}
+
+/// Лейбл под заглавием
+struct TextLabelModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .lineSpacing(5)
+            .frame(width: 340, height: 130, alignment: .leading)
+    }
+}
+
+/// Размер заглавия с кнопкой меню
+struct FrameTitleMenuModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 360, height: 140, alignment: .leading)
+            .foregroundColor(.primary)
+    }
+}
+
+/// Текст кнопки в поп-апе
+struct TextButtonPopupModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.black)
+            .font(.headline)
+            .padding()
+    }
+}
+
+///  Поп-ап
+struct FramePopupModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 300, height: 200)
+            .cornerRadius(20)
+            .shadow(radius: 20)
+    }
+}
+
 /// Белый TextField
 struct WhiteTextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
             .frame(width: 350, height: 40)
-            .foregroundColor(.black)
+            .foregroundColor(.black) // почему не работает?
             .background(.white)
             .cornerRadius(20)
             .font(.system(size: 22, weight: .thin))
@@ -76,19 +149,19 @@ struct ButtonGoldModifier: ViewModifier {
 }
 
 /// Круг на таббаре
-struct ImageIconHomeModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: 25, weight: .semibold, design: .default))
-            .frame(width: 60, height: 60)
-            .background(Color(StringValues.backgroundColor))
-            .opacity(1)
-            .cornerRadius(30)
-            .overlay(content: {
-                RoundedRectangle(cornerRadius: 30).stroke(.black).opacity(0.1)
-            })
-    }
-}
+//struct ImageIconHomeModifier: ViewModifier {
+//    func body(content: Content) -> some View {
+//        content
+//            .font(.system(size: 25, weight: .semibold, design: .default))
+//            .frame(width: 60, height: 60)
+//            .background(Color(StringValues.backgroundColor))
+//            .opacity(1)
+//            .cornerRadius(30)
+//            .overlay(content: {
+//                RoundedRectangle(cornerRadius: 30).stroke(.black).opacity(0.1)
+//            })
+//    }
+//}
 
 /// Изображение смайлика
 struct ImageIconSmileModifier: ViewModifier {
@@ -104,6 +177,9 @@ struct ImageIconSmileModifier: ViewModifier {
 /// Золотой градиент
 struct LinearGradientGoldModifier: ViewModifier {
     func body(content: Content) -> some View {
-        LinearGradient(colors: [Color("#F6E296").opacity(1), Color("#C38C36").opacity(1)], startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+        LinearGradient(colors: [
+            Color(StringValues.forGradientGoldOne).opacity(1),
+            Color(StringValues.forGradientGoldTwo).opacity(1)
+        ], startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
     }
 }

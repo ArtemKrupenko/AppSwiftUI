@@ -20,11 +20,12 @@ struct SplashScreenView: View {
     
     var body: some View {
         if isActive {
-            // Если имя пользователя уже было введено, открываем сразу HomeView
+            // Если имя пользователя уже было введено, открываем сразу MainView
             if currentUser.name != StringValues.nul {
-                let mainViewModel = MainViewModel(user: currentUser)
-                MainView(mainViewModel: mainViewModel)
-                    .environmentObject(router)
+//                let mainViewModel = MainViewModel(user: currentUser)
+//                MainView(mainViewModel: mainViewModel)
+//                    .environmentObject(router)
+                MainView()
             } else {
                 StartView(user: currentUser)
             }
@@ -32,7 +33,7 @@ struct SplashScreenView: View {
             ZStack {
                 gradientModifierGold()
                 VStack {
-                    Image(systemName: "aqi.medium")
+                    Image(systemName: StringValues.aqiMedium)
                         .font(.system(size: 100))
                         .foregroundColor(.black.opacity(0.8))
 //                    Text("Название")

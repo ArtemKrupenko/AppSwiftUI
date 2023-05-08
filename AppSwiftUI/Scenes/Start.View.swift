@@ -20,11 +20,11 @@ struct StartView: View {
                 gradientModifierGold()
 //                Image("welcome-seal").resizable().edgesIgnoringSafeArea(.all).opacity(1)
                 VStack(spacing: 15) {
-                    Text("Давай знакомиться!")
+                    Text(StringValues.startNameUserTitle)
                         .foregroundColor(.black)
                         .font(.title2)
                         .bold()
-                    Text("Как тебя зовут?")
+                    Text(StringValues.startNameUserLabel)
                         .foregroundColor(.black)
                         .font(.title2)
                         .frame(width: 350, height: 40, alignment: .center)
@@ -34,16 +34,16 @@ struct StartView: View {
 //                        .font(.title2)
 //                        .frame(width: 350, height: 120, alignment: .center)
 //                        .multilineTextAlignment(.center)
-                    TextField("Ваше имя", text: $user.name)
+                    TextField(StringValues.startNameUserTextField, text: $user.name)
                         .focused($nameIsFocused)
-                        .whiteTextField()
+                        .whiteTextField() 
                     Button {
                         isPressStart = true
                         nameIsFocused = false
                         // Сохраняем имя пользователя в UserDefaults
                         user.saveCurrentUser()
                     } label: {
-                        Text("Продолжить")
+                        Text(StringValues.continueText)
                             .frame(width: 350)
                             .buttonGold()
                             .overlay(content: {
@@ -51,10 +51,11 @@ struct StartView: View {
                             })
                     }
                 }.fullScreenCover(isPresented: $isPressStart) {
-                    // Если имя пользователя уже было введено, открываем сразу HomeView
+                    // Если имя пользователя уже было введено, открываем сразу MainView
                     if user.name != StringValues.nul {
-                        let mainViewModel = MainViewModel(user: user)
-                        MainView(mainViewModel: mainViewModel)
+//                        let mainViewModel = MainViewModel(user: user)
+//                        MainView(mainViewModel: mainViewModel)
+                        MainView()
                     } else {
                         StartView(user: user)
                     }

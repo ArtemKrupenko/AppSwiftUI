@@ -73,7 +73,7 @@ final class DiaryViewModel: ObservableObject {
     func saveEntries() {
         let entriesData = try? JSONEncoder().encode(entries)
         UserDefaults.standard.set(entriesData, forKey: StringValues.entries)
-//        print("Записи сохранены в UserDefaults")
+        print("Записи сохранены в UserDefaults")
     }
 
     func loadEntries() {

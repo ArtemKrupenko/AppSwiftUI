@@ -10,11 +10,18 @@ import SwiftUI
 struct MotivationView: View {
     
     @StateObject var viewModel: MotivationViewModel
+    @EnvironmentObject var menuViewModel: MenuViewModel
     
     var body: some View {
-        NavigationView {
+        backgroundViewApp()
+        VStack {
+            Spacer().frame(height: 50)
+            HStack {
+                Spacer(minLength: 340)
+                menuButton()
+            }
+            Spacer().frame(height: 150)
             ZStack {
-                backgroundViewApp()
                 RoundedRectangle(cornerRadius: 20)
                     .gradientModifierGold().cornerRadius(20)
                     .frame(width: 270, height: 370)
@@ -44,6 +51,24 @@ struct MotivationView: View {
                     }
                 }
             }
+            Spacer()
+        }
+        .environmentObject(menuViewModel)
+    }
+    
+    @ViewBuilder
+    private func menuButton() -> some View {
+        if menuViewModel.sideButton {
+            Button {
+                withAnimation(.spring(response: 0.9, dampingFraction: 0.7)) {
+                    menuViewModel.toggleMenu()
+                }
+            } label: {
+                Image(systemName: StringValues.menuIcon)
+                    .font(.title)
+                    .foregroundColor(Color(StringValues.goldButton))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }

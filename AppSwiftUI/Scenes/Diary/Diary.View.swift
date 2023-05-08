@@ -9,35 +9,33 @@ import SwiftUI
 
 struct DiaryView: View {
     
+    @EnvironmentObject var menuViewModel: MenuViewModel
     @StateObject var viewModel = DiaryViewModel(router: Router())
 
     var body: some View {
-        NavigationStack {
-            ZStack {
-                backgroundViewApp()
-                VStack(spacing: 10) {
-                    titleView
-                    entriesView
-                    Spacer()
+        backgroundViewApp()
+        VStack {
+            VStack {
+                Spacer(minLength: 140)
+                HStack {
+                    Text(StringValues.diary)
+                        .textTitle()
+                    menuButton()
                 }
-                .padding(.vertical)
+                Text(StringValues.diaryLabel)
+                    .textLabel()
+                entriesView
+                Spacer()
             }
-            .navigationBarTitle(StringValues.diary, displayMode: .inline)
+            .frame(width: 360, height: 300, alignment: .leading)
             .foregroundColor(.primary)
+            Spacer()
         }
         .onAppear {
             viewModel.loadEntries()
         }
         .accentColor(.primary)
-    }
-    
-    private var titleView: some View {
-        VStack {
-            Text(StringValues.diaryLabel)
-                .lineSpacing(5)
-                .multilineTextAlignment(.center)
-                .frame(width: 260, height: 150)
-        }
+        .environmentObject(menuViewModel)
     }
     
     private var entriesView: some View {
@@ -45,7 +43,7 @@ struct DiaryView: View {
             ForEach(viewModel.sections) { section in
                 NavigationLink(destination: getDestinationView(for: section)) {
                     Text(section.nameSection)
-                        .frame(width: 250)
+                        .frame(width: 350)
                         .buttonGold()
                 }
             }
@@ -61,9 +59,27 @@ struct DiaryView: View {
             let viewModel = AchievementsListViewModel(diaryViewModel: viewModel, sectionIndex: 1)
             return AnyView(AchievementsListView(viewModel: viewModel))
         case viewModel.sections[2]:
-            return AnyView(EmptyView())
+            // TODO: - Исправить на новый раздел
+            let viewModel = AchievementsListViewModel(diaryViewModel: viewModel, sectionIndex: 1)
+            return AnyView(AchievementsListView(viewModel: viewModel))
         default:
             fatalError()
+        }
+    }
+    
+    @ViewBuilder
+    private func menuButton() -> some View {
+        if menuViewModel.sideButton {
+            Button {
+                withAnimation(.spring(response: 0.9, dampingFraction: 0.7)) {
+                    menuViewModel.toggleMenu()
+                }
+            } label: {
+                Image(systemName: StringValues.menuIcon)
+                    .font(.title)
+                    .foregroundColor(Color(StringValues.goldButton))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }

@@ -22,14 +22,13 @@ struct PopupUserName: View {
                         .ignoresSafeArea()
                     VStack {
                         HStack {
-                            Text("Введите новое имя")
-                                .foregroundColor(.black)
-                                .font(.headline)
-                                .padding()
+                            Text(StringValues.enterNewNameUser)
+                                .textButtonPopup()
                             Spacer()
                         }
                         Divider()
-                        TextField("Имя", text: $mainViewModel.newName)
+                        TextField(StringValues.nameUser, text: $mainViewModel.newName)
+                            .foregroundColor(.black) // почему не работает?
                             .padding(.horizontal)
                         Divider()
                         HStack {
@@ -41,26 +40,20 @@ struct PopupUserName: View {
                                 mainViewModel.newName = StringValues.nul
                                 mainViewModel.showPopupUserName = false
                             }) {
-                                Text("Сохранить")
-                                    .foregroundColor(.black)
-                                    .font(.headline)
-                                    .padding()
+                                Text(StringValues.save)
+                                    .textButtonPopup()
                             }
                             Spacer()
                             Button(action: {
                                 mainViewModel.showPopupUserName = false
                             }) {
-                                Text("Отмена")
-                                    .foregroundColor(.black)
-                                    .font(.headline)
-                                    .padding()
+                                Text(StringValues.cancel)
+                                    .textButtonPopup()
                             }
                         }
                     }.padding()
                 }
-                .frame(width: 300, height: 200)
-                .cornerRadius(20)
-                .shadow(radius: 20)
+                .framePopup()
             }
         }
     }

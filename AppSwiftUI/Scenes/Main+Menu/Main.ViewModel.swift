@@ -9,10 +9,9 @@ import Foundation
 
 final class MainViewModel: ObservableObject {
     
-    @Published var selectedView = 2
+    @Published var selectedView: TabViewEnum = .home
     
     @Published var user: User
-
     @Published var newName = StringValues.nul
     
     @Published var showPopupUserName = false
@@ -20,6 +19,10 @@ final class MainViewModel: ObservableObject {
     
     init(user: User) {
         self.user = user
+    }
+    
+    func setSelectedView(_ view: TabViewEnum) {
+        selectedView = view
     }
     
     func saveUser() {

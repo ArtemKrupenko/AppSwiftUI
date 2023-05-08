@@ -10,13 +10,13 @@ import SwiftUI
 @main
 struct AppSwiftUIApp: App {
     
-    @StateObject var viewModel: MenuViewModel = MenuViewModel()
-    @AppStorage("isDarkMode") private var isDarkMode = false
+    @StateObject var menuViewModel: MenuViewModel = MenuViewModel()
+    @AppStorage(StringValues.isDarkMode) private var isDarkMode = false
     
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
-                .environmentObject(viewModel)
+                .environmentObject(menuViewModel)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }

@@ -19,9 +19,10 @@ struct MenuView: View {
             VStack {
                 topScreen()
                     .padding()
-                menuButton(image: "person", text: "Изменить имя", action: mainViewModel.renamePopup)
+                menuButton(icon: StringValues.person, text: StringValues.changeNameUser, action: mainViewModel.renamePopup)
                 tabItemMenu()
-                menuButton(image: "trash", text: "Удалить аккаунт", action: mainViewModel.accountDeletePopup)
+                menuButton(icon: StringValues.trash, text: StringValues.deleteAccount, action: mainViewModel.accountDeletePopup)
+                separator()
                 DarkToggle()
             }
             .frame(maxWidth: 288, maxHeight: .infinity)
@@ -34,7 +35,7 @@ struct MenuView: View {
     @ViewBuilder
     private func topScreen() -> some View {
         HStack {
-            Text("Меню")
+            Text(StringValues.menu)
                 .foregroundColor(.black)
                 .font(.title3)
                 .bold()
@@ -44,7 +45,7 @@ struct MenuView: View {
                     menuViewModel.toggleMenu()
                 }
             } label: {
-                Image(systemName: "xmark")
+                Image(systemName: StringValues.xmark)
                     .font(.title2)
                     .foregroundColor(.black)
             }
@@ -52,7 +53,7 @@ struct MenuView: View {
     }
     
     @ViewBuilder
-    private func menuButton(image: String, text: String, action: @escaping () -> Void) -> some View {
+    private func menuButton(icon: String, text: String, action: @escaping () -> Void) -> some View {
         separator()
         Button(action: {
             withAnimation {
@@ -60,7 +61,7 @@ struct MenuView: View {
             }
         }, label: {
             HStack(spacing: 10) {
-                Image(systemName: image)
+                Image(systemName: icon)
                     .font(.headline)
                     .frame(width: 30)
                 Text(text)
@@ -90,7 +91,6 @@ struct MenuView: View {
         }
     }
     
-    // Разделитель
     @ViewBuilder
     private func separator() -> some View {
         Rectangle()
@@ -102,6 +102,7 @@ struct MenuView: View {
 }
 
 struct TabButton: View {
+    
     var icon: String
     var title: String
     @Binding var selectedTab: String
@@ -124,7 +125,7 @@ struct TabButton: View {
             .padding(.vertical, 5)
             .padding(.horizontal, 15)
             .background(
-                Color.white
+                Color(StringValues.backgroundColor)
                     .opacity(selectedTab == title ? 1 : 0)
                     .clipShape(CustomCorners(corners: [.topRight, .bottomRight], radius: 20))
             )
@@ -133,6 +134,7 @@ struct TabButton: View {
 }
 
 struct CustomCorners: Shape {
+    
     var corners: UIRectCorner
     var radius: CGFloat
     
@@ -144,15 +146,15 @@ struct CustomCorners: Shape {
 
 struct DarkToggle: View {
     
-    @AppStorage("isDarkMode") var isDarkMode = false
+    @AppStorage(StringValues.isDarkMode) var isDarkMode = false
     @EnvironmentObject var menuViewModel: MenuViewModel
     
     var body: some View {
         HStack {
-            Image(systemName: "moon")
+            Image(systemName: StringValues.moon)
                 .font(.headline)
                 .frame(width: 30)
-            Text("Темный режим")
+            Text(StringValues.darkMode)
                 .fontWeight(.semibold)
             Spacer()
             Toggle(isOn: $isDarkMode) {

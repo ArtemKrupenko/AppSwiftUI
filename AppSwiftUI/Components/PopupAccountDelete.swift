@@ -22,13 +22,11 @@ struct PopupAccountDelete: View {
                         .ignoresSafeArea()
                     VStack {
                         HStack {
-                            Text("Вы уверены?")
-                                .foregroundColor(.black)
-                                .font(.headline)
-                                .padding()
+                            Text(StringValues.deleteAccountTitle)
+                                .textButtonPopup()
                             Spacer()
                         }
-                        Text("Удаление аккаунта приведет к потере всех ваших данных 🥺")
+                        Text(StringValues.deleteAccountLabel)
                             .frame(width: 280, height: 50)
                             .foregroundColor(.black)
                         HStack {
@@ -36,26 +34,21 @@ struct PopupAccountDelete: View {
                                 mainViewModel.user.resetDefaults()
                                 mainViewModel.showPopupAccountDelete = false
                             }) {
-                                Text("Удалить")
+                                Text(StringValues.delete)
                                     .foregroundColor(.red)
-                                    .font(.headline)
-                                    .padding()
+                                    .textButtonPopup()
                             }
                             Spacer()
                             Button(action: {
                                 mainViewModel.showPopupAccountDelete = false
                             }) {
-                                Text("Отмена")
-                                    .foregroundColor(.black)
-                                    .font(.headline)
-                                    .padding()
+                                Text(StringValues.cancel)
+                                    .textButtonPopup()
                             }
                         }
                     }.padding()
                 }
-                .frame(width: 300, height: 200)
-                .cornerRadius(20)
-                .shadow(radius: 20)
+                .framePopup()
             }
         }
     }
