@@ -44,6 +44,11 @@ extension View {
         modifier(WhiteTextFieldModifier())
     }
     
+    /// Стиль плейсхолдера TextField
+    func placeholderStyle(showPlaceHolder: Bool, placeholder: String) -> some View {
+        modifier(PlaceholderStyleModifier(showPlaceHolder: showPlaceHolder, placeholder: placeholder))
+    }
+    
     /// Длинная золотая кнопка
     func buttonGold() -> some View {
         modifier(ButtonGoldModifier())
@@ -133,6 +138,24 @@ struct WhiteTextFieldModifier: ViewModifier {
             .overlay(content: {
                 RoundedRectangle(cornerRadius: 20).stroke(.black)
             })
+    }
+}
+
+/// Стиль плейсхолдера TextField
+struct PlaceholderStyleModifier: ViewModifier {
+    var showPlaceHolder: Bool
+    var placeholder: String
+
+    func body(content: Content) -> some View {
+        ZStack(alignment: .leading) {
+            if showPlaceHolder {
+                Text(placeholder)
+                .padding(.horizontal, 5)
+            }
+            content
+            .foregroundColor(Color.black)
+            .padding(5)
+        }
     }
 }
 

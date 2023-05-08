@@ -22,13 +22,14 @@ struct PopupUserName: View {
                         .ignoresSafeArea()
                     VStack {
                         HStack {
-                            Text(StringValues.enterNewNameUser)
+                            Text(StringValues.changeNameUser)
                                 .textButtonPopup()
                             Spacer()
                         }
                         Divider()
-                        TextField(StringValues.nameUser, text: $mainViewModel.newName)
-                            .foregroundColor(.black) // почему не работает?
+                        TextField(StringValues.nul, text: $mainViewModel.newName)
+                            .placeholderStyle(showPlaceHolder: mainViewModel.newName.isEmpty, placeholder: StringValues.enterNewNameUser)
+                            .foregroundColor(.gray)
                             .padding(.horizontal)
                         Divider()
                         HStack {

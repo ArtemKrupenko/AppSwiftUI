@@ -34,7 +34,8 @@ struct StartView: View {
 //                        .font(.title2)
 //                        .frame(width: 350, height: 120, alignment: .center)
 //                        .multilineTextAlignment(.center)
-                    TextField(StringValues.startNameUserTextField, text: $user.name)
+                    TextField(StringValues.nul, text: $user.name)
+                        .placeholderStyle(showPlaceHolder: user.name.isEmpty, placeholder: StringValues.startNameUserTextField)
                         .focused($nameIsFocused)
                         .whiteTextField() 
                     Button {
