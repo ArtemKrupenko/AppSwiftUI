@@ -26,7 +26,7 @@ struct MenuView: View {
                 DarkToggle()
             }
             .frame(maxWidth: 288, maxHeight: .infinity)
-            .background(Color(StringValues.goldButton))
+            .background(Color(StringValues.buttonColor))
             .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -121,7 +121,7 @@ struct TabButton: View {
                 Text(title)
                     .fontWeight(.semibold)
             }
-            .foregroundColor(selectedTab == title ? Color(StringValues.goldButton) : .black)
+            .foregroundColor(selectedTab == title ? Color(StringValues.buttonColor) : .black)
             .padding(.vertical, 5)
             .padding(.horizontal, 15)
             .background(
@@ -159,6 +159,7 @@ struct DarkToggle: View {
             Spacer()
             Toggle(isOn: $isDarkMode) {
             }
+            .tint(Color(StringValues.backgroundColor))
             .frame(width: 80, height: 30)
         }
         .padding()

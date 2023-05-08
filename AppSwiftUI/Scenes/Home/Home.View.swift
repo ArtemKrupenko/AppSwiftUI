@@ -23,7 +23,7 @@ struct HomeView: View {
                 else if mainViewModel.showPopupAccountDelete == true  {
                     PopupAccountDelete()
                 } else {
-                    Color(StringValues.goldButton)
+                    Color(StringValues.buttonColor)
                         .ignoresSafeArea()
                     MenuView(mainViewModel: mainViewModel)
                         .opacity(menuViewModel.isOpen ? 1 : 0)

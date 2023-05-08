@@ -17,9 +17,9 @@ struct StringValues {
     
     // Цвета
     static let backgroundColor = "BackgroundColor"
-    static let goldButton = "ButtonColor"
-    static let forGradientGoldOne = "ForGradientGold1"
-    static let forGradientGoldTwo = "ForGradientGold2"
+    static let buttonColor = "ButtonColor"
+    static let forGradientOne = "ForGradientOne"
+    static let forGradientTwo = "ForGradientTwo"
     
     // Картинки (иконки)
     static let plus = "plus.circle.fill"

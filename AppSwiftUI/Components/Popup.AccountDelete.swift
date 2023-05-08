@@ -18,7 +18,7 @@ struct PopupAccountDelete: View {
                 .ignoresSafeArea()
             if $mainViewModel.showPopupAccountDelete.wrappedValue {
                 ZStack {
-                    Color(StringValues.goldButton)
+                    Color(StringValues.buttonColor)
                         .ignoresSafeArea()
                     VStack {
                         HStack {

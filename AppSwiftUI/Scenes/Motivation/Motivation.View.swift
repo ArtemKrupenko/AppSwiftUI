@@ -66,7 +66,7 @@ struct MotivationView: View {
             } label: {
                 Image(systemName: StringValues.menuIcon)
                     .font(.title)
-                    .foregroundColor(Color(StringValues.goldButton))
+                    .foregroundColor(Color(StringValues.buttonColor))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }

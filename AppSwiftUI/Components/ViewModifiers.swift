@@ -131,7 +131,7 @@ struct WhiteTextFieldModifier: ViewModifier {
         content
             .padding()
             .frame(width: 350, height: 40)
-            .foregroundColor(.black) // почему не работает?
+            .foregroundColor(.black)
             .background(.white)
             .cornerRadius(20)
             .font(.system(size: 22, weight: .thin))
@@ -165,7 +165,7 @@ struct ButtonGoldModifier: ViewModifier {
         content
             .foregroundColor(.black)
             .frame(height: 40)
-            .background(Color(StringValues.goldButton))
+            .background(Color(StringValues.buttonColor))
             .font(.system(size: 22, weight: .thin))
             .cornerRadius(20)
     }
@@ -201,8 +201,8 @@ struct ImageIconSmileModifier: ViewModifier {
 struct LinearGradientGoldModifier: ViewModifier {
     func body(content: Content) -> some View {
         LinearGradient(colors: [
-            Color(StringValues.forGradientGoldOne).opacity(1),
-            Color(StringValues.forGradientGoldTwo).opacity(1)
+            Color(StringValues.forGradientOne).opacity(1),
+            Color(StringValues.forGradientTwo).opacity(1)
         ], startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
     }
 }

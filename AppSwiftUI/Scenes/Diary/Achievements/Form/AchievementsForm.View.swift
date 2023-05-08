@@ -29,7 +29,7 @@ struct AchievementsFormView: View {
                 presentationMode.wrappedValue.dismiss()
             }
             .font(.title3.bold())
-            .foregroundColor(Color(StringValues.goldButton))
+            .foregroundColor(Color(StringValues.buttonColor))
         }
     }
 }

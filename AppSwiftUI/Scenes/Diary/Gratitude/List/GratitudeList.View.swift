@@ -27,7 +27,7 @@ struct GratitudeListView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: GratitudeFormView(viewModel: GratitudeFormViewModel(diaryViewModel: viewModel.diaryViewModel))) {
                             Image(systemName: StringValues.plus)
-                                .foregroundColor(Color(StringValues.goldButton))
+                                .foregroundColor(Color(StringValues.buttonColor))
                         }
                     }
                 }
@@ -44,7 +44,7 @@ struct GratitudeListView: View {
                             VStack(alignment: .leading) {
                                 Text(entry.title)
                                     .font(.title3.bold())
-                                    .foregroundColor(Color(StringValues.goldButton))
+                                    .foregroundColor(Color(StringValues.buttonColor))
                                 Text(entry.date.ISO8601Format(.iso8601Date(timeZone: .current)))
                                     .foregroundColor(.secondary)
                             }
@@ -57,7 +57,7 @@ struct GratitudeListView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: GratitudeFormView(viewModel: GratitudeFormViewModel(diaryViewModel: viewModel.diaryViewModel))) {
                             Image(systemName: StringValues.plus)
-                                .foregroundColor(Color(StringValues.goldButton))
+                                .foregroundColor(Color(StringValues.buttonColor))
                         }
                     }
                 }

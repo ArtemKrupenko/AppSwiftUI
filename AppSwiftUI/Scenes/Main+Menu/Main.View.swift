@@ -74,7 +74,7 @@ struct MainView: View {
 //                    }, label: {
 //                        if number == 2 {
 //                            Image(systemName: arrayIconsTabBar[number].icon)
-//                                .foregroundColor(mainViewModel.selectedView == number ? Color(StringValues.goldButton).opacity(1) : Color(.label))
+//                                .foregroundColor(mainViewModel.selectedView == number ? Color(StringValues.buttonColor).opacity(1) : Color(.label))
 //                                .imageIconHome()
 //                        } else {
 //                            Image(systemName: arrayIconsTabBar[number].icon)

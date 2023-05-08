@@ -18,7 +18,7 @@ struct PopupUserName: View {
                 .ignoresSafeArea()
             if $mainViewModel.showPopupUserName.wrappedValue {
                 ZStack {
-                    Color(StringValues.goldButton)
+                    Color(StringValues.buttonColor)
                         .ignoresSafeArea()
                     VStack {
                         HStack {
@@ -29,7 +29,7 @@ struct PopupUserName: View {
                         Divider()
                         TextField(StringValues.nul, text: $mainViewModel.newName)
                             .placeholderStyle(showPlaceHolder: mainViewModel.newName.isEmpty, placeholder: StringValues.enterNewNameUser)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.primary)
                             .padding(.horizontal)
                         Divider()
                         HStack {

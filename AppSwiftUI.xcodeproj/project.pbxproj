@@ -46,8 +46,8 @@
 		ACF241FF2A04F4C3001515A6 /* SplashScreen.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF241FE2A04F4C3001515A6 /* SplashScreen.View.swift */; };
 		ACF242012A051B4D001515A6 /* Menu.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF242002A051B4D001515A6 /* Menu.ViewModel.swift */; };
 		ACF242032A051E4E001515A6 /* Menu.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF242022A051E4E001515A6 /* Menu.View.swift */; };
-		ACF242052A064A11001515A6 /* PopupUserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF242042A064A11001515A6 /* PopupUserName.swift */; };
-		ACF242072A07AB77001515A6 /* PopupAccountDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF242062A07AB77001515A6 /* PopupAccountDelete.swift */; };
+		ACF242052A064A11001515A6 /* Popup.UserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF242042A064A11001515A6 /* Popup.UserName.swift */; };
+		ACF242072A07AB77001515A6 /* Popup.AccountDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF242062A07AB77001515A6 /* Popup.AccountDelete.swift */; };
 		ACF2420B2A08EA39001515A6 /* IconsTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2420A2A08EA39001515A6 /* IconsTabBar.swift */; };
 		ACF2420E2A08FB88001515A6 /* HomePage.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2420D2A08FB88001515A6 /* HomePage.ViewModel.swift */; };
 		ACF242102A08FBBA001515A6 /* HomePage.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2420F2A08FBBA001515A6 /* HomePage.View.swift */; };
@@ -95,8 +95,8 @@
 		ACF241FE2A04F4C3001515A6 /* SplashScreen.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.View.swift; sourceTree = "<group>"; };
 		ACF242002A051B4D001515A6 /* Menu.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.ViewModel.swift; sourceTree = "<group>"; };
 		ACF242022A051E4E001515A6 /* Menu.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.View.swift; sourceTree = "<group>"; };
-		ACF242042A064A11001515A6 /* PopupUserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupUserName.swift; sourceTree = "<group>"; };
-		ACF242062A07AB77001515A6 /* PopupAccountDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAccountDelete.swift; sourceTree = "<group>"; };
+		ACF242042A064A11001515A6 /* Popup.UserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.UserName.swift; sourceTree = "<group>"; };
+		ACF242062A07AB77001515A6 /* Popup.AccountDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.AccountDelete.swift; sourceTree = "<group>"; };
 		ACF2420A2A08EA39001515A6 /* IconsTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsTabBar.swift; sourceTree = "<group>"; };
 		ACF2420D2A08FB88001515A6 /* HomePage.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.ViewModel.swift; sourceTree = "<group>"; };
 		ACF2420F2A08FBBA001515A6 /* HomePage.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.View.swift; sourceTree = "<group>"; };
@@ -272,8 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				ACE74CAD29CA439400791EF8 /* ViewModifiers.swift */,
-				ACF242042A064A11001515A6 /* PopupUserName.swift */,
-				ACF242062A07AB77001515A6 /* PopupAccountDelete.swift */,
+				ACF242042A064A11001515A6 /* Popup.UserName.swift */,
+				ACF242062A07AB77001515A6 /* Popup.AccountDelete.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -450,12 +450,12 @@
 				ACF242012A051B4D001515A6 /* Menu.ViewModel.swift in Sources */,
 				ACE74CAB29C9F4CF00791EF8 /* Start.View.swift in Sources */,
 				ACF242032A051E4E001515A6 /* Menu.View.swift in Sources */,
-				ACF242072A07AB77001515A6 /* PopupAccountDelete.swift in Sources */,
+				ACF242072A07AB77001515A6 /* Popup.AccountDelete.swift in Sources */,
 				AC154D3C2A0267EE006E2D46 /* EntryDetailsArea.View.swift in Sources */,
 				ACB48B0C29C0B36600F97373 /* AppEntry.swift in Sources */,
 				ACACCB1C29F577DD000E403D /* Calendar.ViewModel.swift in Sources */,
 				ACBE2BA029D0ACC800048D5D /* User.swift in Sources */,
-				ACF242052A064A11001515A6 /* PopupUserName.swift in Sources */,
+				ACF242052A064A11001515A6 /* Popup.UserName.swift in Sources */,
 				AC154D422A026876006E2D46 /* GratitudeForm.ViewModel.swift in Sources */,
 				ACBE2BA429D0ADE700048D5D /* Main.ViewModel.swift in Sources */,
 				ACF241EE2A02B9A8001515A6 /* AchievementsList.ViewModel.swift in Sources */,
