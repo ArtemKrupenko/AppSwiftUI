@@ -17,10 +17,11 @@ struct MotivationView: View {
         VStack {
             Spacer().frame(height: 50)
             HStack {
-                Spacer(minLength: 340)
+                Text(StringValues.nul)
+                    .textTitle()
                 menuButton()
             }
-            Spacer().frame(height: 150)
+            Spacer()
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .gradientModifierGold().cornerRadius(20)
@@ -68,7 +69,7 @@ struct MotivationView: View {
                     .font(.title)
                     .foregroundColor(Color(StringValues.buttonColor))
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(width: 20, alignment: .trailing)
         }
     }
 }

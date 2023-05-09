@@ -21,22 +21,4 @@ final class MenuViewModel: ObservableObject {
         isOpen.toggle()
         sideButton.toggle()
     }
-    
-    // Обновление выбранного представления в MainViewModel при переключении вкладки
-    func selectTab(_ tab: String, mainViewModel: MainViewModel) {
-        selectedTab = tab
-        
-        switch selectedTab {
-        case StringValues.home:
-            mainViewModel.setSelectedView(.home)
-        case StringValues.diary:
-            mainViewModel.setSelectedView(.diary)
-        case StringValues.moodCalendar:
-            mainViewModel.setSelectedView(.moodCalendar)
-        case StringValues.motivation:
-            mainViewModel.setSelectedView(.motivation)
-        default:
-            break
-        }
-    }
 }

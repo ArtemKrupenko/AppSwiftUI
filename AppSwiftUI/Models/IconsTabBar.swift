@@ -24,8 +24,6 @@ var arrayIconsTabBar = [
 var arrayIconsAbout = [
     IconsTabBar(icon: StringValues.doc, title: StringValues.aboutApp),
     IconsTabBar(icon: StringValues.ellipsisBubble, title: StringValues.feedback),
-    IconsTabBar(icon: StringValues.lightbulb, title: StringValues.idea),
-    IconsTabBar(icon: StringValues.exclamationmarkTriangle, title: StringValues.error),
     IconsTabBar(icon: StringValues.paperplaneCircle, title: StringValues.telegram)
 ]
 
@@ -35,4 +33,7 @@ enum TabViewEnum {
     case diary
     case goodNews
     case moodCalendar
+    case aboutApp
+    case feedback
+    case telegram
 }

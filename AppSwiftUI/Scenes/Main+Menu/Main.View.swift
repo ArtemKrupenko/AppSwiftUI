@@ -25,6 +25,12 @@ struct MainView: View {
                 MotivationView(viewModel: MotivationViewModel())
             case .goodNews:
                 GoodNewsView()
+            case .aboutApp:
+                EmptyView()
+            case .feedback:
+                EmptyView()
+            case .telegram:
+                EmptyView()
             }
             
             if menuViewModel.isMenuOpen {

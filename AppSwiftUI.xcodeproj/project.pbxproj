@@ -18,7 +18,7 @@
 		AC154D402A026850006E2D46 /* GratitudeDetail.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC154D3F2A026850006E2D46 /* GratitudeDetail.ViewModel.swift */; };
 		AC154D422A026876006E2D46 /* GratitudeForm.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC154D412A026876006E2D46 /* GratitudeForm.ViewModel.swift */; };
 		AC154D442A0268A2006E2D46 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC154D432A0268A2006E2D46 /* Router.swift */; };
-		AC71ED0129D6CA6D00970A3F /* GoodNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0029D6CA6D00970A3F /* GoodNewsView.swift */; };
+		AC71ED0129D6CA6D00970A3F /* GoodNews.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0029D6CA6D00970A3F /* GoodNews.View.swift */; };
 		AC71ED0529D6CCBB00970A3F /* Smile.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0429D6CCBB00970A3F /* Smile.View.swift */; };
 		AC71ED0729D6CCEC00970A3F /* Home.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0629D6CCEC00970A3F /* Home.View.swift */; };
 		AC71ED0929D7162100970A3F /* Motivation.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0829D7162100970A3F /* Motivation.View.swift */; };
@@ -51,6 +51,7 @@
 		ACF2420B2A08EA39001515A6 /* IconsTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2420A2A08EA39001515A6 /* IconsTabBar.swift */; };
 		ACF2420E2A08FB88001515A6 /* HomePage.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2420D2A08FB88001515A6 /* HomePage.ViewModel.swift */; };
 		ACF242102A08FBBA001515A6 /* HomePage.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2420F2A08FBBA001515A6 /* HomePage.View.swift */; };
+		ACF242122A095759001515A6 /* Empty.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF242112A095759001515A6 /* Empty.View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +66,7 @@
 		AC154D3F2A026850006E2D46 /* GratitudeDetail.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDetail.ViewModel.swift; sourceTree = "<group>"; };
 		AC154D412A026876006E2D46 /* GratitudeForm.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeForm.ViewModel.swift; sourceTree = "<group>"; };
 		AC154D432A0268A2006E2D46 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		AC71ED0029D6CA6D00970A3F /* GoodNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodNewsView.swift; sourceTree = "<group>"; };
+		AC71ED0029D6CA6D00970A3F /* GoodNews.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodNews.View.swift; sourceTree = "<group>"; };
 		AC71ED0429D6CCBB00970A3F /* Smile.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smile.View.swift; sourceTree = "<group>"; };
 		AC71ED0629D6CCEC00970A3F /* Home.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.View.swift; sourceTree = "<group>"; };
 		AC71ED0829D7162100970A3F /* Motivation.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.View.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		ACF2420A2A08EA39001515A6 /* IconsTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsTabBar.swift; sourceTree = "<group>"; };
 		ACF2420D2A08FB88001515A6 /* HomePage.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.ViewModel.swift; sourceTree = "<group>"; };
 		ACF2420F2A08FBBA001515A6 /* HomePage.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.View.swift; sourceTree = "<group>"; };
+		ACF242112A095759001515A6 /* Empty.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				ACBF0A5929EEB37400FF7822 /* Smile */,
 				ACBF0A5729EEB32000FF7822 /* Motivation */,
 				ACF241FD2A03F61A001515A6 /* GoodNews */,
+				ACF242112A095759001515A6 /* Empty.View.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -333,7 +336,7 @@
 		ACF241FD2A03F61A001515A6 /* GoodNews */ = {
 			isa = PBXGroup;
 			children = (
-				AC71ED0029D6CA6D00970A3F /* GoodNewsView.swift */,
+				AC71ED0029D6CA6D00970A3F /* GoodNews.View.swift */,
 			);
 			path = GoodNews;
 			sourceTree = "<group>";
@@ -432,7 +435,7 @@
 				AC154D2A29FFC4BF006E2D46 /* Diary.Model.swift in Sources */,
 				AC154D2E29FFC4E1006E2D46 /* Diary.ViewModel.swift in Sources */,
 				ACF241F02A02B9C1001515A6 /* AchievementsList.View.swift in Sources */,
-				AC71ED0129D6CA6D00970A3F /* GoodNewsView.swift in Sources */,
+				AC71ED0129D6CA6D00970A3F /* GoodNews.View.swift in Sources */,
 				ACACCB1A29F5779E000E403D /* Calendar.Model.swift in Sources */,
 				AC71ED0D29D7262B00970A3F /* Motivation.Model.swift in Sources */,
 				ACBF0A5D29EEB48700FF7822 /* Smile.ViewModel.swift in Sources */,
@@ -440,6 +443,7 @@
 				AC154D2C29FFC4CE006E2D46 /* Diary.View.swift in Sources */,
 				ACF241E92A02A60B001515A6 /* StringValues.swift in Sources */,
 				AC71ED0729D6CCEC00970A3F /* Home.View.swift in Sources */,
+				ACF242122A095759001515A6 /* Empty.View.swift in Sources */,
 				ACF2420B2A08EA39001515A6 /* IconsTabBar.swift in Sources */,
 				AC154D3A2A02678F006E2D46 /* GratitudeForm.View.swift in Sources */,
 				ACE74CB029CA465A00791EF8 /* Main.View.swift in Sources */,

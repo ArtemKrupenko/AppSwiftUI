@@ -1,13 +1,13 @@
 //
-//  GoodNewsView.swift
+//  Empty.View.swift
 //  AppSwiftUI
 //
-//  Created by Артем on 31.03.2023.
+//  Created by Артем on 08.05.2023.
 //
 
 import SwiftUI
 
-struct GoodNewsView: View {
+struct EmptyView: View {
     
     @EnvironmentObject var menuViewModel: MenuViewModel
     
@@ -17,11 +17,11 @@ struct GoodNewsView: View {
             VStack {
                 Spacer(minLength: 140)
                 HStack {
-                    Text(StringValues.goodNews)
+                    Text(StringValues.empty)
                         .textTitle()
                     menuButton()
                 }
-                Text(StringValues.goodNewsLabel)
+                Text(StringValues.nul)
                     .textLabel()
                 Spacer()
             }
@@ -44,13 +44,7 @@ struct GoodNewsView: View {
                     .font(.title)
                     .foregroundColor(Color(StringValues.buttonColor))
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(width: 20, alignment: .trailing)
         }
-    }
-}
-
-struct GoodNewsView_Previews: PreviewProvider {
-    static var previews: some View {
-        GoodNewsView()
     }
 }

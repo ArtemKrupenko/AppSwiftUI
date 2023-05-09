@@ -28,16 +28,25 @@ struct HomeView: View {
                     MenuView(mainViewModel: mainViewModel)
                         .opacity(menuViewModel.isOpen ? 1 : 0)
                     ZStack {
-                        if menuViewModel.selectedTab == StringValues.diary {
-                            DiaryView(viewModel: DiaryViewModel(router: Router()))
-                        } else if menuViewModel.selectedTab == StringValues.moodCalendar {
-                            SmileView(viewModel: SmileViewModel())
-                        } else if menuViewModel.selectedTab == StringValues.home {
-                            HomePageView()
-                        } else if menuViewModel.selectedTab == StringValues.motivation {
-                            MotivationView(viewModel: MotivationViewModel())
-                        } else if menuViewModel.selectedTab == StringValues.goodNews{
-                            GoodNewsView()
+                        switch menuViewModel.selectedTab {
+                            case StringValues.diary:
+                                DiaryView(viewModel: DiaryViewModel(router: Router()))
+                            case StringValues.moodCalendar:
+                                SmileView(viewModel: SmileViewModel())
+                            case StringValues.home:
+                                HomePageView()
+                            case StringValues.motivation:
+                                MotivationView(viewModel: MotivationViewModel())
+                            case StringValues.goodNews:
+                                GoodNewsView()
+                            case StringValues.aboutApp:
+                                EmptyView()
+                            case StringValues.feedback:
+                                EmptyView()
+                            case StringValues.telegram:
+                                EmptyView()
+                            default:
+                                EmptyView()
                         }
                     }
                     .mask(RoundedRectangle(cornerRadius: menuViewModel.isOpen ? 25 : 0, style: .continuous))

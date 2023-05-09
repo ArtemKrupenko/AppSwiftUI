@@ -54,7 +54,7 @@ struct StringValues {
     static let startNameUserLabel = "Как тебя зовут?"
     static let startNameUserTextField = "Ваше имя"
     static let enterNewNameUser = "Введите новое имя"
-    static let changeNameUser = "Изменить имя"
+    static let changeNameUser = " Изменить имя"
     
     // Удаление
     static let deleteAccount = "Удалить аккаунт"
@@ -66,11 +66,12 @@ struct StringValues {
     static let textField = "Название (обязательное поле)"
     static let delete = "Удалить"
     static let entry = "Запись"
-    static let save = "Сохранить"
+    static let save = " Сохранить"
     static let cancel = "Отмена"
     static let continueText = "Продолжить"
     static let more = "Еще"
     static let darkMode = "Темный режим"
+    static let empty = "Пустой экран"
     
     // Раздел "Главная"
     static let home = "Главная"
@@ -114,4 +115,7 @@ struct StringValues {
     static let idea = "Предложить идею"
     static let error = "Сообщить об ошибке"
     static let telegram = "Подписаться в Telegram"
+    
+    static let ideaURL = "https://forms.gle/wqAMEWNWF7tUMCiT9"
+    static let errorURL = "https://forms.gle/U1zbm7rYoG2aENQR7"
 }

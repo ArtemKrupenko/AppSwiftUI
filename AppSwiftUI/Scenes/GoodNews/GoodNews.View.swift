@@ -1,13 +1,13 @@
 //
-//  HomePage.View.swift
+//  GoodNewsView.swift
 //  AppSwiftUI
 //
-//  Created by Артем on 08.05.2023.
+//  Created by Артем on 31.03.2023.
 //
 
 import SwiftUI
 
-struct HomePageView: View {
+struct GoodNewsView: View {
     
     @EnvironmentObject var menuViewModel: MenuViewModel
     
@@ -17,11 +17,11 @@ struct HomePageView: View {
             VStack {
                 Spacer(minLength: 140)
                 HStack {
-                    Text("Привет \(menuViewModel.user.name)!")
+                    Text(StringValues.goodNews)
                         .textTitle()
                     menuButton()
                 }
-                Text(StringValues.homeLabel)
+                Text(StringValues.goodNewsLabel)
                     .textLabel()
                 Spacer()
             }
@@ -46,5 +46,11 @@ struct HomePageView: View {
             }
             .frame(width: 20, alignment: .trailing)
         }
+    }
+}
+
+struct GoodNewsView_Previews: PreviewProvider {
+    static var previews: some View {
+        GoodNewsView()
     }
 }

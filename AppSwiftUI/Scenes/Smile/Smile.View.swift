@@ -16,12 +16,11 @@ struct SmileView: View {
     var body: some View {
         backgroundViewApp()
         VStack {
-            VStack(spacing: 20) {
+            VStack(spacing: 10) {
                 Spacer(minLength: 40)
                 HStack {
                     Text(StringValues.moodCalendar)
                         .textTitle()
-                        .padding(.leading, 15)
                     menuButton()
                 }
                 Text(StringValues.moodLabel)
@@ -60,7 +59,7 @@ struct SmileView: View {
                     .font(.title)
                     .foregroundColor(Color(StringValues.buttonColor))
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(width: 20, alignment: .trailing)
         }
     }
 }

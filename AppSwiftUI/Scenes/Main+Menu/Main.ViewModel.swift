@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class MainViewModel: ObservableObject {
+    
+    @Environment(\.openURL) var openURL
     
     @Published var selectedView: TabViewEnum = .home
     
@@ -36,5 +39,17 @@ final class MainViewModel: ObservableObject {
 
     func accountDeletePopup() {
         showPopupAccountDelete = true
+    }
+    
+    func ideaOpenURL() {
+        if let url = URL(string: StringValues.ideaURL) {
+            openURL(url)
+        }
+    }
+    
+    func errorOpenURL() {
+        if let url = URL(string: StringValues.errorURL) {
+            openURL(url)
+        }
     }
 }

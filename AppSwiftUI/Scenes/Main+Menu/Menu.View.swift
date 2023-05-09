@@ -21,6 +21,8 @@ struct MenuView: View {
                     .padding()
                 menuButton(icon: StringValues.person, text: StringValues.changeNameUser, action: mainViewModel.renamePopup)
                 tabItemMenu()
+                menuButton(icon: StringValues.lightbulb, text: StringValues.idea, action: mainViewModel.ideaOpenURL)
+                menuButton(icon: StringValues.exclamationmarkTriangle, text: StringValues.error, action: mainViewModel.errorOpenURL)
                 menuButton(icon: StringValues.trash, text: StringValues.deleteAccount, action: mainViewModel.accountDeletePopup)
                 separator()
                 DarkToggle()

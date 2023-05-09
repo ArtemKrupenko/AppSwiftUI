@@ -82,7 +82,7 @@ struct TextTitleModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.system(size: 20, weight: .medium))
-            .frame(width: 310, height: 20, alignment: .leading)
+            .frame(width: 320, height: 20, alignment: .leading)
             .padding(.leading, 10)
     }
 }

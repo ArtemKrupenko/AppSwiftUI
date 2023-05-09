@@ -79,7 +79,7 @@ struct DiaryView: View {
                     .font(.title)
                     .foregroundColor(Color(StringValues.buttonColor))
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(width: 20, alignment: .trailing)
         }
     }
 }
