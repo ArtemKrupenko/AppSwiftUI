@@ -49,9 +49,9 @@ extension View {
         modifier(PlaceholderStyleModifier(showPlaceHolder: showPlaceHolder, placeholder: placeholder))
     }
     
-    /// Длинная золотая кнопка
-    func buttonGold() -> some View {
-        modifier(ButtonGoldModifier())
+    /// Длинная кнопка
+    func buttonColor() -> some View {
+        modifier(ButtonColorModifier())
     }
     
     /// Круг на таббаре
@@ -159,8 +159,8 @@ struct PlaceholderStyleModifier: ViewModifier {
     }
 }
 
-/// Длинная золотая кнопка
-struct ButtonGoldModifier: ViewModifier {
+/// Длинная кнопка
+struct ButtonColorModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(.black)

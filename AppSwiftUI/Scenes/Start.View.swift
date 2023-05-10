@@ -46,7 +46,7 @@ struct StartView: View {
                     } label: {
                         Text(StringValues.continueText)
                             .frame(width: 350)
-                            .buttonGold()
+                            .buttonColor()
                             .overlay(content: {
                                 RoundedRectangle(cornerRadius: 20).stroke(.black).opacity(0.2)
                             })

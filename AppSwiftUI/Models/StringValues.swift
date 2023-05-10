@@ -42,6 +42,9 @@ struct StringValues {
     static let paperplaneCircle = "paperplane.circle"
     static let aqiMedium = "aqi.medium"
     static let menuIcon = "line.3.horizontal.circle.fill"
+    static let shuffle = "shuffle"
+    static let arrowLeft = "arrow.turn.down.left"
+    static let arrowRight = "arrow.turn.down.right"
     
     // ForKey
     static let entries = "entries"
@@ -69,7 +72,7 @@ struct StringValues {
     static let save = " Сохранить"
     static let cancel = "Отмена"
     static let continueText = "Продолжить"
-    static let more = "Еще"
+    static let random = "Случайное"
     static let darkMode = "Темный режим"
     static let empty = "Пустой экран"
     
@@ -95,7 +98,6 @@ struct StringValues {
     static let notes = "Заметки"
     static let notesButton = "📔 Заметки"
     
-    
     // Раздел "Календарь настроения"
     static let moodCalendar = "Календарь настроения"
     static let moodLabel = "Здесь можно будет следить, как меняется твое настроение со временем \nКакое у тебя сегодня настроение?"
@@ -104,6 +106,9 @@ struct StringValues {
     
     // Раздел "Цитаты"
     static let motivation = "Цитаты"
+    static let swipeLeftLabel = "свайп влево: следующая цитата"
+    static let swipeRightLabel = "свайп вправо: предыдущая цитата"
+    static let randomQuoteLabel = "случайная цитата:"
     
     // Раздел "Хорошие новости"
     static let goodNews = "Хорошие новости"

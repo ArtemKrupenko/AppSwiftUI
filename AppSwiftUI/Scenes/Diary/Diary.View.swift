@@ -44,7 +44,7 @@ struct DiaryView: View {
                 NavigationLink(destination: getDestinationView(for: section)) {
                     Text(section.nameSection)
                         .frame(width: 350)
-                        .buttonGold()
+                        .buttonColor()
                 }
             }
         }

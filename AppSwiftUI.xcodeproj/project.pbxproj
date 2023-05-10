@@ -18,12 +18,15 @@
 		AC154D402A026850006E2D46 /* GratitudeDetail.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC154D3F2A026850006E2D46 /* GratitudeDetail.ViewModel.swift */; };
 		AC154D422A026876006E2D46 /* GratitudeForm.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC154D412A026876006E2D46 /* GratitudeForm.ViewModel.swift */; };
 		AC154D442A0268A2006E2D46 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC154D432A0268A2006E2D46 /* Router.swift */; };
+		AC3C4D592A0A4E5000FB485B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AC3C4D582A0A4E5000FB485B /* SwiftyJSON */; };
+		AC3C4D5C2A0A4EAE00FB485B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AC3C4D5B2A0A4EAE00FB485B /* SDWebImageSwiftUI */; };
 		AC71ED0129D6CA6D00970A3F /* GoodNews.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0029D6CA6D00970A3F /* GoodNews.View.swift */; };
 		AC71ED0529D6CCBB00970A3F /* Smile.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0429D6CCBB00970A3F /* Smile.View.swift */; };
 		AC71ED0729D6CCEC00970A3F /* Home.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0629D6CCEC00970A3F /* Home.View.swift */; };
 		AC71ED0929D7162100970A3F /* Motivation.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0829D7162100970A3F /* Motivation.View.swift */; };
 		AC71ED0B29D7167D00970A3F /* Motivation.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0A29D7167D00970A3F /* Motivation.ViewModel.swift */; };
 		AC71ED0D29D7262B00970A3F /* Motivation.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71ED0C29D7262B00970A3F /* Motivation.Model.swift */; };
+		ACA1922C2A0BBF4E00496DD5 /* CardMotivation.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1922B2A0BBF4E00496DD5 /* CardMotivation.View.swift */; };
 		ACACCB1A29F5779E000E403D /* Calendar.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACCB1929F5779E000E403D /* Calendar.Model.swift */; };
 		ACACCB1C29F577DD000E403D /* Calendar.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACCB1B29F577DD000E403D /* Calendar.ViewModel.swift */; };
 		ACACCB1E29F578ED000E403D /* Calendar.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACCB1D29F578ED000E403D /* Calendar.View.swift */; };
@@ -72,6 +75,7 @@
 		AC71ED0829D7162100970A3F /* Motivation.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.View.swift; sourceTree = "<group>"; };
 		AC71ED0A29D7167D00970A3F /* Motivation.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.ViewModel.swift; sourceTree = "<group>"; };
 		AC71ED0C29D7262B00970A3F /* Motivation.Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.Model.swift; sourceTree = "<group>"; };
+		ACA1922B2A0BBF4E00496DD5 /* CardMotivation.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMotivation.View.swift; sourceTree = "<group>"; };
 		ACACCB1929F5779E000E403D /* Calendar.Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.Model.swift; sourceTree = "<group>"; };
 		ACACCB1B29F577DD000E403D /* Calendar.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.ViewModel.swift; sourceTree = "<group>"; };
 		ACACCB1D29F578ED000E403D /* Calendar.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.View.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3C4D5C2A0A4EAE00FB485B /* SDWebImageSwiftUI in Frameworks */,
+				AC3C4D592A0A4E5000FB485B /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +250,7 @@
 		ACBF0A5729EEB32000FF7822 /* Motivation */ = {
 			isa = PBXGroup;
 			children = (
+				ACA1922B2A0BBF4E00496DD5 /* CardMotivation.View.swift */,
 				AC71ED0C29D7262B00970A3F /* Motivation.Model.swift */,
 				AC71ED0829D7162100970A3F /* Motivation.View.swift */,
 				AC71ED0A29D7167D00970A3F /* Motivation.ViewModel.swift */,
@@ -368,6 +375,10 @@
 			dependencies = (
 			);
 			name = AppSwiftUI;
+			packageProductDependencies = (
+				AC3C4D582A0A4E5000FB485B /* SwiftyJSON */,
+				AC3C4D5B2A0A4EAE00FB485B /* SDWebImageSwiftUI */,
+			);
 			productName = AppSwiftUI;
 			productReference = ACB48B0829C0B36600F97373 /* AppSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -396,6 +407,10 @@
 				Base,
 			);
 			mainGroup = ACB48AFF29C0B36600F97373;
+			packageReferences = (
+				AC3C4D572A0A4E5000FB485B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				AC3C4D5A2A0A4EAE00FB485B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = ACB48B0929C0B36600F97373 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -435,6 +450,7 @@
 				AC154D2A29FFC4BF006E2D46 /* Diary.Model.swift in Sources */,
 				AC154D2E29FFC4E1006E2D46 /* Diary.ViewModel.swift in Sources */,
 				ACF241F02A02B9C1001515A6 /* AchievementsList.View.swift in Sources */,
+				ACA1922C2A0BBF4E00496DD5 /* CardMotivation.View.swift in Sources */,
 				AC71ED0129D6CA6D00970A3F /* GoodNews.View.swift in Sources */,
 				ACACCB1A29F5779E000E403D /* Calendar.Model.swift in Sources */,
 				AC71ED0D29D7262B00970A3F /* Motivation.Model.swift in Sources */,
@@ -681,6 +697,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC3C4D572A0A4E5000FB485B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		AC3C4D5A2A0A4EAE00FB485B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC3C4D582A0A4E5000FB485B /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC3C4D572A0A4E5000FB485B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		AC3C4D5B2A0A4EAE00FB485B /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC3C4D5A2A0A4EAE00FB485B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACB48B0029C0B36600F97373 /* Project object */;
 }

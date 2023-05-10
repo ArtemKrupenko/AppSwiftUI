@@ -10,51 +10,54 @@ import SwiftUI
 struct MotivationView: View {
     
     @StateObject var viewModel: MotivationViewModel
+    
     @EnvironmentObject var menuViewModel: MenuViewModel
     
     var body: some View {
-        backgroundViewApp()
-        VStack {
-            Spacer().frame(height: 50)
-            HStack {
-                Text(StringValues.nul)
-                    .textTitle()
-                menuButton()
-            }
-            Spacer()
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .gradientModifierGold().cornerRadius(20)
-                    .frame(width: 270, height: 370)
-                    .shadow(radius: 20)
-                    .overlay(content: {
-                        RoundedRectangle(cornerRadius: 20).stroke(.black).opacity(0.2)
-                    })
-                VStack {
-                    Text(viewModel.quote.randomQuote[0])
-                        .foregroundColor(.black)
-                        .font(.system(size: 19, weight: .bold))
-                        .padding()
-                        .frame(width: 270, height: 270, alignment: .center)
-                        .multilineTextAlignment(.center)
-                    Text(viewModel.quote.randomQuote[1])
-                        .foregroundColor(.black)
-                        .font(.footnote)
-                    Button {
-                        viewModel.randomMotivation()
-                    } label: {
-                        Text(StringValues.more)
-                            .frame(width: 80)
-                            .buttonGold()
-                            .overlay(content: {
-                                RoundedRectangle(cornerRadius: 20).stroke(.black).opacity(0.2)
-                            })
+        ZStack {
+            backgroundViewApp()
+            VStack {
+                Spacer().frame(height: 50)
+                HStack {
+                    Text(StringValues.nul)
+                        .textTitle()
+                    menuButton()
+                }
+                Spacer()
+                ZStack {
+                    ForEach(viewModel.quotes.indices, id: \.self) { index in
+                        CardMotivationView(viewModel: viewModel, quote: viewModel.quotes[index])
+                            .opacity(1 - Double(abs(index - viewModel.currentIndex)))
                     }
                 }
+                VStack {
+                    HStack {
+                        Image(systemName: StringValues.arrowLeft)
+                        Text(StringValues.swipeLeftLabel)
+                        Spacer()
+                        Text(StringValues.swipeRightLabel)
+                        Image(systemName: StringValues.arrowRight)
+                    }
+                    Spacer()
+                    VStack {
+                        Text(StringValues.randomQuoteLabel)
+                    }
+                }
+                .font(.footnote)
+                .foregroundColor(.gray)
+                .frame(width: 340, height: 80, alignment: .center)
+                .multilineTextAlignment(.center)
+                Button {
+                    viewModel.randomMotivation()
+                } label: {
+                    Image(systemName: StringValues.shuffle)
+                        .frame(width: 40)
+                        .buttonColor()
+                }
+                Spacer()
             }
-            Spacer()
+            .environmentObject(menuViewModel)
         }
-        .environmentObject(menuViewModel)
     }
     
     @ViewBuilder
@@ -71,11 +74,5 @@ struct MotivationView: View {
             }
             .frame(width: 20, alignment: .trailing)
         }
-    }
-}
-
-struct MotivationView_Previews: PreviewProvider {
-    static var previews: some View {
-        MotivationView(viewModel: MotivationViewModel())
     }
 }
