@@ -12,24 +12,26 @@ struct HomePageView: View {
     @EnvironmentObject var menuViewModel: MenuViewModel
     
     var body: some View {
-        backgroundViewApp()
-        VStack {
+        ZStack {
+            backgroundViewApp()
             VStack {
-                Spacer(minLength: 140)
-                HStack {
-                    Text("Привет \(menuViewModel.user.name)!")
-                        .textTitle()
-                    menuButton()
+                VStack {
+                    Spacer(minLength: 140)
+                    HStack {
+                        Text("Привет \(menuViewModel.user.name)!")
+                            .textTitle()
+                        menuButton()
+                    }
+                    Text(StringValues.homeLabel)
+                        .textLabel()
+                    Spacer()
                 }
-                Text(StringValues.homeLabel)
-                    .textLabel()
+                .frameTitleMenu()
                 Spacer()
             }
-            .frameTitleMenu()
-            Spacer()
+            .accentColor(.primary)
+            .environmentObject(menuViewModel)
         }
-        .accentColor(.primary)
-        .environmentObject(menuViewModel)
     }
     
     @ViewBuilder

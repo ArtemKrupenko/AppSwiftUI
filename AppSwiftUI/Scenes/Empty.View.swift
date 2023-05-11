@@ -12,24 +12,26 @@ struct EmptyView: View {
     @EnvironmentObject var menuViewModel: MenuViewModel
     
     var body: some View {
-        backgroundViewApp()
-        VStack {
+        ZStack {
+            backgroundViewApp()
             VStack {
-                Spacer(minLength: 140)
-                HStack {
-                    Text(StringValues.empty)
-                        .textTitle()
-                    menuButton()
+                VStack {
+                    Spacer(minLength: 140)
+                    HStack {
+                        Text(StringValues.empty)
+                            .textTitle()
+                        menuButton()
+                    }
+                    Text(StringValues.nul)
+                        .textLabel()
+                    Spacer()
                 }
-                Text(StringValues.nul)
-                    .textLabel()
+                .frameTitleMenu()
                 Spacer()
             }
-            .frameTitleMenu()
-            Spacer()
+            .accentColor(.primary)
+            .environmentObject(menuViewModel)
         }
-        .accentColor(.primary)
-        .environmentObject(menuViewModel)
     }
     
     @ViewBuilder

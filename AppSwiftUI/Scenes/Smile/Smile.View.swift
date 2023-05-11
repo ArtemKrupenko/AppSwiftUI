@@ -14,37 +14,39 @@ struct SmileView: View {
     @EnvironmentObject var menuViewModel: MenuViewModel
     
     var body: some View {
-        backgroundViewApp()
-        VStack {
-            VStack(spacing: 10) {
-                Spacer(minLength: 40)
-                HStack {
-                    Text(StringValues.moodCalendar)
-                        .textTitle()
-                    menuButton()
-                }
-                Text(StringValues.moodLabel)
-                    .font(.footnote)
-                    .frame(width: 340, height: 60, alignment: .center)
-                    .multilineTextAlignment(.center)
-                HStack {
-                    ForEach(StringValues.smiley.indices, id: \.self) { index in
-                        Button {
-                            let date = Date()
-                            calendarViewModel.selectMood(for: date, mood: StringValues.smiley[index])
-                        } label: {
-                            Text(StringValues.smiley[index]).imageIconSmile()
+        ZStack {
+            backgroundViewApp()
+            VStack {
+                VStack(spacing: 10) {
+                    Spacer(minLength: 40)
+                    HStack {
+                        Text(StringValues.moodCalendar)
+                            .textTitle()
+                        menuButton()
+                    }
+                    Text(StringValues.moodLabel)
+                        .font(.footnote)
+                        .frame(width: 340, height: 60, alignment: .center)
+                        .multilineTextAlignment(.center)
+                    HStack {
+                        ForEach(StringValues.smiley.indices, id: \.self) { index in
+                            Button {
+                                let date = Date()
+                                calendarViewModel.selectMood(for: date, mood: StringValues.smiley[index])
+                            } label: {
+                                Text(StringValues.smiley[index]).imageIconSmile()
+                            }
                         }
                     }
+                    Spacer().frame(height: 30)
+                    CalendarView(calendarViewModel: calendarViewModel)
+                    Spacer().frame(height: 50)
                 }
-                Spacer().frame(height: 30)
-                CalendarView(calendarViewModel: calendarViewModel)
-                Spacer().frame(height: 50)
+                .foregroundColor(.primary)
             }
-            .foregroundColor(.primary)
+            .accentColor(.primary)
+            .environmentObject(menuViewModel)
         }
-        .accentColor(.primary)
-        .environmentObject(menuViewModel)
     }
     
     @ViewBuilder

@@ -13,29 +13,31 @@ struct DiaryView: View {
     @StateObject var viewModel = DiaryViewModel(router: Router())
 
     var body: some View {
-        backgroundViewApp()
-        VStack {
+        ZStack {
+            backgroundViewApp()
             VStack {
-                Spacer(minLength: 140)
-                HStack {
-                    Text(StringValues.diary)
-                        .textTitle()
-                    menuButton()
+                VStack {
+                    Spacer(minLength: 140)
+                    HStack {
+                        Text(StringValues.diary)
+                            .textTitle()
+                        menuButton()
+                    }
+                    Text(StringValues.diaryLabel)
+                        .textLabel()
+                    entriesView
+                    Spacer()
                 }
-                Text(StringValues.diaryLabel)
-                    .textLabel()
-                entriesView
+                .frame(width: 360, height: 300, alignment: .leading)
+                .foregroundColor(.primary)
                 Spacer()
             }
-            .frame(width: 360, height: 300, alignment: .leading)
-            .foregroundColor(.primary)
-            Spacer()
+            .onAppear {
+                viewModel.loadEntries()
+            }
+            .accentColor(.primary)
+            .environmentObject(menuViewModel)
         }
-        .onAppear {
-            viewModel.loadEntries()
-        }
-        .accentColor(.primary)
-        .environmentObject(menuViewModel)
     }
     
     private var entriesView: some View {
